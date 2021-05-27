@@ -251,10 +251,6 @@ class RBTree{
 
             if( nod -> color == black )
                 Fix_double_black( nod );
-            else{
-                //if( nod -> sibling() )
-                //   nod -> sibling() -> color = red;
-            }
 
             if( nod -> parent -> left == nod )
                 nod -> parent -> left = NULL;
@@ -303,8 +299,6 @@ class RBTree{
     void Fix_double_black( node* nod ){
         if( nod == root )
             return;
-
-        node* bro = nod -> sibling();
 
         if( nod -> sibling() == NULL ){
             Fix_double_black( nod -> parent );
